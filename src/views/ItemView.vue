@@ -31,10 +31,15 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'fetchedItem', 'userName', 'userTimeAgo', 
-      'userQuestion', 'userContent', 'contentPoints']),
+      'fetchedItem',
+      'userName',
+      'userTimeAgo',
+      'userQuestion',
+      'userContent',
+      'contentPoints',
+    ]),
   },
-}
+};
 </script>
 
 <style scoped>

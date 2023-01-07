@@ -2,10 +2,9 @@
   <div class="container">
     <h2>User Profile</h2>
     <user-profile :userInfo="fetchedUser">
-      <div slot="userName">{{ fetchedUser.id }}</div>
-      <span slot="userKarma">{{ fetchedUser.karma }} karma</span>
+      <template v-slot:userName>{{ fetchedUser.id }}</template>
+      <template v-slot:userKarma>{{ fetchedUser.karma }} karma</template>
     </user-profile>
-
   </div>
 </template>
 
@@ -16,7 +15,7 @@ import bus from '../utils/bus.js';
 
 export default {
   components: {
-    UserProfile
+    UserProfile,
   },
   created() {
     bus.$emit('off:progress');
@@ -24,7 +23,7 @@ export default {
   computed: {
     ...mapGetters(['fetchedUser']),
   },
-}
+};
 </script>
 
 <style scoped>
