@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <spinner :loading="loading"></spinner>
+    <spinner />
     <tool-bar></tool-bar>
     <transition name="routing-fade" mode="out-in">
       <router-view></router-view>
@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import ToolBar from './components/ToolBar.vue';
-import Spinner from './components/Spinner.vue';
-import bus from './utils/bus.js';
+import { defineComponent } from "vue";
+import ToolBar from "./components/ToolBar.vue";
+import Spinner from "./components/Spinner.vue";
+import bus from "./utils/bus.js";
 
 export default defineComponent({
   components: {
@@ -33,8 +33,8 @@ export default defineComponent({
     },
   },
   created() {
-    bus.$on('on:progress', this.onProgress);
-    bus.$on('off:progress', this.offProgress);
+    bus.$on("on:progress", this.onProgress);
+    bus.$on("off:progress", this.offProgress);
   },
 });
 </script>

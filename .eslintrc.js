@@ -4,22 +4,29 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/vue3-essential',
-    'eslint:recommended',
-    '@vue/typescript/recommended',
-    'plugin:prettier/recommended',
+    "plugin:vue/vue3-essential",
+    "eslint:recommended",
+    "@vue/typescript/recommended",
+    "plugin:prettier/recommended",
   ],
   parserOptions: {
     ecmaVersion: 2020,
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'prettier/prettier': [
-      'error',
+    "no-console": "off",
+    // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    // "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
+    "prettier/prettier": [
+      "error",
       {
-        singleQuote: true,
-        parser: 'flow',
+        singleQuote: false,
+        semi: true,
+        useTabs: false,
+        tabWidth: 2,
+        trailingComma: "all",
+        printWidth: 80,
+        bracketSpacing: true,
+        arrowParens: "always",
       },
     ],
   },
