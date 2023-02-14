@@ -1,13 +1,14 @@
-import ListView from './ListView.vue';
-import bus from '../utils/bus.js';
+import ListView from "./ListView.vue";
+import bus from "../utils/bus.js";
+import { h } from "vue";
 
-export default function createListView(name) {
+export default function createListView(name: string) {
   return {
     name,
     mounted() {
-      bus.$emit('off:progress');
+      bus.$emit("off:progress");
     },
-    render(h) {
+    render() {
       return h(ListView);
     },
   };
