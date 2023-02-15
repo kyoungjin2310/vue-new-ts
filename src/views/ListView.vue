@@ -5,11 +5,21 @@
 </template>
 
 <script>
-import ListItem from '../components/ListItem.vue';
+import { fetchNews } from "@/api/instance/news";
+import ListItem from "../components/ListItem.vue";
 
 export default {
   components: {
     ListItem,
+  },
+  methods: {
+    async fetchNewsItems() {
+      const res = await fetchNews();
+      console.log(res.data);
+    },
+  },
+  created() {
+    this.fetchNewsItems();
   },
 };
 </script>
