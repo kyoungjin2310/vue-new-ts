@@ -35,20 +35,22 @@
   </ul>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
+import { NewsItem } from "@/api/index";
+export default defineComponent({
   props: {
     items: {
-      type: Array,
+      type: Array as PropType<NewsItem[]>,
       required: true,
     },
   },
   computed: {
-    listItems() {
+    listItems(): any {
       return this.$store.getters.fetchedList;
     },
   },
-};
+});
 </script>
 
 <style scoped>

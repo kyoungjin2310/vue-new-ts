@@ -11,7 +11,7 @@ const api = {
 //axios response data를 복사하거나 swagger 값 가져와서 type정의
 //data가져와서type 정의 사이트가서 복붙해도됨
 
-interface NewsItem {
+export interface NewsItem {
   comments_count: number;
   domain: string;
   id: number;
