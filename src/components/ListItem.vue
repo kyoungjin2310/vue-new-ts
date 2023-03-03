@@ -28,7 +28,9 @@
           }}</router-link>
         </small>
         <small v-if="news.time_ago" class="link-text">
-          {{ news.time_ago }}
+          <!-- {{ news.time_ago }} -->
+          <!-- {{ timeAgo(news) }} -->
+          {{ timeAgo }}
         </small>
       </div>
     </li>
@@ -45,7 +47,15 @@ export default defineComponent({
       required: true,
     },
   },
+  // methods: {
+  //   timeAgo(news: NewsItem): string {
+  //     return news.time_ago.concat(", 2021");
+  //   },
+  // },
   computed: {
+    timeAgo(): string {
+      return this.items[0].time_ago.concat(", 2021");
+    },
     listItems(): any {
       return this.$store.getters.fetchedList;
     },
