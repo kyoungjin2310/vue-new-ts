@@ -47,12 +47,13 @@ export default defineComponent({
       required: true,
     },
   },
-  // methods: {
-  // },
-  computed: {
+  methods: {
+    //v-for, computed 같이 사용불가
     timeAgo(news: NewsItem): string {
       return news.time_ago.concat(", 2021");
     },
+  },
+  computed: {
     // timeAgo(): string {
     //   return this.items[0].time_ago.concat(", 2021");
     // },
