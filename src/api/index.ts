@@ -37,17 +37,17 @@ function fetchJobs() {
   return axios.get(api.jobs);
 }
 
-function fetchUser(id) {
+function fetchUser(id: number) {
   const url = `${api.user}${id}.json`;
   return axios.get(url);
 }
 
-function fetchItem(id) {
+function fetchItem(id: number) {
   const url = `${api.item}${id}.json`;
   return axios.get(url);
 }
 
-function fetchList(type) {
+function fetchList(type: string) {
   const url = `https://api.hnpwa.com/v0/${type}/1.json`;
   return axios.get(url);
 }
