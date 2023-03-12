@@ -1,22 +1,25 @@
-import Vue from "vue";
 import Vuex from "vuex";
-import getters from "./getters.ts";
-import mutations from "./mutations.ts";
-import actions from "./actions.ts";
+import getters from "@/store/getters";
+import mutations from "@/store/mutations";
+import actions from "@/store/actions";
+import { state } from "./state";
 
-Vue.use(Vuex);
+const store = {
+  state: state,
+  getters: getters,
+  mutations: mutations,
+  actions: actions,
+};
 
-export default new Vuex.Store({
-  strict: process.env.NODE_ENV !== "production",
-  state: {
-    news: [],
-    ask: [],
-    jobs: [],
-    user: {},
-    item: {},
-    list: [],
-  },
-  getters,
-  mutations,
-  actions,
-});
+//node_modules/vuex - vue.d.ts: 아래로 수정(끄고 다시 켜야 적용)
+// import { RootState } from "@/store/state";
+// import { ComponentCustomOptions } from "vue";
+// import { Store } from "./index";
+
+// declare module "@vue/runtime-core" {
+//   interface ComponentCustomOptions {
+//     store?: Store<RootState>;
+//   }
+// }
+
+export default new Vuex.Store(store);
