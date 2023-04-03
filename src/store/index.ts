@@ -1,10 +1,10 @@
-import Vuex from "vuex";
+import Vuex, { StoreOptions } from "vuex";
 import getters from "@/store/getters";
 import mutations from "@/store/mutations";
 import actions from "@/store/actions";
-import { state } from "./state";
+import { RootState, state } from "./state";
 
-const store = {
+const store: StoreOptions<RootState> = {
   state: state,
   getters: getters,
   mutations: mutations,
