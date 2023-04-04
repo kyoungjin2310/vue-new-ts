@@ -11,4 +11,5 @@ type MyMutations = {
   ): ReturnType<Mutations[K]>;
 };
 
+//& - 타입 합집합 - Omit & MyMutations
 export type MyStore = Omit<Store<RootState>, "commit"> & MyMutations;
